@@ -1,0 +1,140 @@
+.content {
+    /*position: absolute;*/
+    flex: 1;
+    /*height: 100%;*/
+
+    display: flex;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.tree-container {
+    /*max-width: 500px;*/
+    min-width: auto;
+    height: 100%;
+    flex: 1 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    border-left: 1px solid #1B1C1D;
+    border-right: 1px solid #1B1C1D;
+}
+
+.tree-header {
+    padding: 2px 5px;
+
+    border-bottom: 2px solid #1B1C1D;
+
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.tree-content {
+    flex: 1;
+
+    padding: 10px;
+
+    word-wrap: break-word;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.tree-content ul {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+}
+
+.tree-content ul {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+}
+
+.tree-content li .recipe-block {
+    position: relative;
+    padding: 5px;
+
+    background: #ecc9c9;
+
+    border: 2px solid #1B1C1D;
+    border-radius: 10px;
+}
+
+.tree-content li .recipe-block img {
+    height: 48px;
+    width: 48px;
+
+    margin: 5px;
+
+    float: left;
+
+    filter: drop-shadow(0 0 5px black);
+}
+
+.tree-content li .recipe-block span {
+    display: inline-block;
+
+    margin-bottom: 5px;
+}
+
+.tree-content li .recipe-block .machines {
+    margin-left: 58px;
+    margin-right: 25px;
+}
+
+.tree-content li .recipe-block .machines * {
+    vertical-align: middle;
+}
+
+.tree-content li .recipe-block .machines img {
+    height: 32px;
+    width: 32px;
+
+    margin: 0;
+
+    float: none;
+}
+
+.recipe-block .header {
+    margin: 0;
+    padding: 0;
+
+    overflow: visible;
+
+    border-bottom: none;
+}
+
+.recipe-block .header .collapser {
+    right: 0;
+    bottom: 0;
+
+    margin: 0;
+}
+
+.recipe-block .settings {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    overflow: visible;
+
+    font-size: 1.3em;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+*::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.content::-webkit-scrollbar {
+    border-top: 1px solid #1B1C1D;
+}

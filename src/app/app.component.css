@@ -1,12 +1,13 @@
 ::ng-deep html,
-::ng-deep body {
+::ng-deep body,
+::ng-deep .body {
     padding: 0;
     margin: 0;
     height: 100%;
     width: 100%;
 }
 
-::ng-deep body {
+::ng-deep .body {
     display: flex;
     flex-flow: column;
 }
@@ -53,7 +54,7 @@
 }
 
 .recipes-container {
-    display: block;
+    display: flex;
 
     flex: 1 1 auto;
     width: auto;
