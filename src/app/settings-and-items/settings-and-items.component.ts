@@ -27,4 +27,14 @@ export class SettingsAndItemsComponent implements OnInit
     {
         console.log('toggle mods.');
     }
+
+    importSettings()
+    {
+        console.log('import settings.');
+    }
+
+    exportSettings()
+    {
+        console.log('export settings.');
+    }
 }

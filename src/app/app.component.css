@@ -30,7 +30,7 @@
 
 .default-usage-container {
     flex: 1;
-    max-height: 181px;
+    max-height: 224px;
 
     display: flex;
     flex-flow: column;

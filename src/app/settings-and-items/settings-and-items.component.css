@@ -4,6 +4,15 @@
     border-bottom: 4px solid rgba(255, 255, 255, 0.25);
 }
 
+.settings-container .button-group {
+    display: flex;
+    flex-flow: row;
+}
+
+.settings-container .button-group .button:first-child {
+    margin-right: 5px;
+}
+
 .settings-container .button {
     width: auto;
 

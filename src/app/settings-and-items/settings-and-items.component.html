@@ -4,11 +4,11 @@
 
 <div class="settings-container">
     <div class="button" (click)="setFactorioPath()">Set factorio path</div>
-    <div lass="button" (click)="setModPath()">Set mods path</div>
+    <div class="button" (click)="setModPath()">Set mods path</div>
     <div class="button" (click)="toggleMods()">Enable/disable mods</div>
-    <div>
-        <div class="button" (click)="import()">Enable/disable mods</div>
-        <div class="button" (click)="toggleMods()">Enable/disable mods</div>
+    <div class="button-group">
+        <div class="button" (click)="importSettings()">Load settings</div>
+        <div class="button" (click)="exportSettings()">Save settings</div>
     </div>
 </div>
 
