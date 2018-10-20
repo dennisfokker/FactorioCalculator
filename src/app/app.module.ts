@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { DefaultUsageComponent } from './default-usage/default-usage.component';
-import { OptionsAndItemsComponent } from './options-and-items/options-and-items.component';
+import { SettingsAndItemsComponent } from './settings-and-items/settings-and-items.component';
 
 
 @NgModule({
@@ -14,7 +14,7 @@ import { OptionsAndItemsComponent } from './options-and-items/options-and-items.
         AppComponent,
         RecipesComponent,
         DefaultUsageComponent,
-        OptionsAndItemsComponent
+        SettingsAndItemsComponent
     ],
     imports: [
         BrowserModule,

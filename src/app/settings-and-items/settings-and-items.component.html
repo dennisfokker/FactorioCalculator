@@ -1,0 +1,25 @@
+<div class="header">
+    <h1>Settings & Items</h1>
+</div>
+
+<div class="settings-container">
+    <div class="button" (click)="setFactorioPath()">Set factorio path</div>
+    <div lass="button" (click)="setModPath()">Set mods path</div>
+    <div class="button" (click)="toggleMods()">Enable/disable mods</div>
+    <div>
+        <div class="button" (click)="import()">Enable/disable mods</div>
+        <div class="button" (click)="toggleMods()">Enable/disable mods</div>
+    </div>
+</div>
+
+<div class="items-container">
+    <div class="item-search-container">
+        <div class="input-container">
+            <i class="fa fa-search"></i>
+            <input type="search" placeholder="Search items/mods">
+        </div>
+    </div>
+
+    <div class="item-list-container collapsable">
+    </div>
+</div>

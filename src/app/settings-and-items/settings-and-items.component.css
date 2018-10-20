@@ -1,10 +1,10 @@
-.options-container {
+.settings-container {
     padding: 4px 10px 4px 10px;
 
     border-bottom: 4px solid rgba(255, 255, 255, 0.25);
 }
 
-.options-container .button {
+.settings-container .button {
     width: auto;
 
     padding: 7px 10px;
@@ -20,11 +20,11 @@
     user-select: none;
 }
 
-.options-container .button:hover {
+.settings-container .button:hover {
     background: #1576c0;
 }
 
-.options-container .button:active {
+.settings-container .button:active {
     transform: translateY(2px);
 
     box-shadow: 0 3px #105a92;
