@@ -9,22 +9,18 @@
 
 ::ng-deep .body {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
 }
 
 .options-and-items-container {
-    display: block;
-
-    position: absolute;
-    width: 250px;
-    height: 100%;
-    max-height: 100%;
-    float: left;
-    display: flex;
-    flex-flow: column;
+    flex: 1;
+    max-width: 250px;
 
     padding: 0;
     margin: 0;
+
+    display: flex;
+    flex-flow: column;
 
     border-right: 4px solid rgba(255, 255, 255, 0.25);
 
@@ -33,19 +29,14 @@
 }
 
 .default-usage-container {
-    display: block;
-
-    flex: 0 1 auto;
-    top: -10px;
-    width: auto;
-    height: 181px;
+    flex: 1;
     max-height: 181px;
+
     display: flex;
     flex-flow: column;
 
     padding: 0;
     margin: 0;
-    margin-left: 254px;
 
     border-bottom: 4px solid rgba(255, 255, 255, 0.25);
 
@@ -54,14 +45,9 @@
 }
 
 .recipes-container {
-    display: flex;
-
-    flex: 1 1 auto;
     width: auto;
-
-    position: relative;
+    position: absolute;
 
     padding: 0;
-    margin: 0;
-    margin-left: 254px;
+    margin: 185px 0 0 254px;
 }
