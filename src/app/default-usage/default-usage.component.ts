@@ -13,5 +13,4 @@ export class DefaultUsageComponent implements OnInit
     ngOnInit()
     {
     }
-
 }
