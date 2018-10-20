@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { DefaultUsageComponent } from './default-usage/default-usage.component';
 import { SettingsAndItemsComponent } from './settings-and-items/settings-and-items.component';
+import { MachineOptionsComponent } from './machine-options/machine-options.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SettingsAndItemsComponent } from './settings-and-items/settings-and-ite
         AppComponent,
         RecipesComponent,
         DefaultUsageComponent,
-        SettingsAndItemsComponent
+        SettingsAndItemsComponent,
+        MachineOptionsComponent
     ],
     imports: [
         BrowserModule,

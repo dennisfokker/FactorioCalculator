@@ -164,6 +164,20 @@ body *::-webkit-scrollbar-track {
     border: 4px solid rgba(0, 0, 0, 0);
 }
 
+html,
+body,
+.body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.body {
+    display: flex;
+    flex-flow: row;
+}
+
 h1 {
     margin: 0;
     padding: 0;
