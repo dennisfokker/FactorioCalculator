@@ -1,0 +1,40 @@
+.content {
+    flex: 1;
+    display: flex;
+
+    margin: 0;
+}
+
+.machine-container {
+    width: 50%;
+
+    flex: 0 1 auto;
+    display: flex;
+    flex-flow: column;
+
+    border-right: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.oil-container {
+    width: 50%;
+
+    flex: 0 1 auto;
+    display: flex;
+    flex-flow: column;
+}
+
+.search-container {
+    width: auto;
+
+    padding: 5px 10px 10px 10px;
+
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.list-container {
+    flex: 1;
+
+    margin: 0;
+
+    /*overflow-y: scroll;*/
+}
