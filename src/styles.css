@@ -70,6 +70,11 @@
 
 body {
     min-width: 1200px;
+    font-family: -apple-system,
+        'Lato',
+        'Helvetica Neue',
+        'Helvetica',
+        'sans-serif';
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -157,4 +162,96 @@ input[type="search"]::-webkit-search-decoration {
     box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     border: 4px solid rgba(0, 0, 0, 0);
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    float: left;
+
+    font-size: 1.3em;
+}
+
+.header {
+    position: relative;
+    width: auto;
+
+    margin: 0 5px 5px 5px;
+    padding: 5px 0;
+    overflow: hidden;
+
+    border-bottom: 4px dashed rgba(255, 255, 255, 0.5);
+}
+
+.header span {
+    display: inline-block;
+
+    margin-right: 25px;
+
+    overflow-wrap: break-word;
+}
+
+.header .collapser {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+
+    margin-right: 5px;
+
+    font-size: 1.3em;
+
+    -moz-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.header .collapser.collapsed {
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.collapsable {
+    overflow: hidden;
+}
+
+.input-container {
+    display: table;
+    width: 100%;
+    height: 25px;
+
+    border-radius: 3px;
+    border: 1px solid #d3d3d3;
+
+    background: white;
+}
+
+.input-container>i {
+    display: inline-block;
+    display: table-cell;
+    width: 20px;
+
+    padding: 3px 5px;
+    padding-right: 0;
+
+    color: #999999;
+}
+
+.input-container>input[type="search"] {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+    outline: none;
+    border: none;
+
+    background: transparent;
 }

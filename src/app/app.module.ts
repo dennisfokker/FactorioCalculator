@@ -4,11 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { DefaultUsageComponent } from './default-usage/default-usage.component';
+import { OptionsAndItemsComponent } from './options-and-items/options-and-items.component';
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        RecipesComponent,
+        DefaultUsageComponent,
+        OptionsAndItemsComponent
     ],
     imports: [
         BrowserModule,
