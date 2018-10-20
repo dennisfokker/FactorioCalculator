@@ -7,6 +7,9 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class OptionsAndItemsComponent implements OnInit
 {
+    @ViewChild('optionsContainer') optionsContainerRef: ElementRef;
+    @ViewChild('itemsContainer') itemsContainerRef: ElementRef;
+
     constructor() { }
 
     ngOnInit()
