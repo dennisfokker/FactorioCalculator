@@ -1,6 +1,7 @@
 .settings-and-items-container {
-    flex: 1;
-    max-width: 250px;
+    position: absolute;
+    width: 250px;
+    height: 100%;
 
     padding: 0;
     margin: 0;
@@ -15,14 +16,13 @@
 }
 
 .default-usage-container {
-    flex: 1;
     max-height: 224px;
 
     display: flex;
     flex-flow: column;
 
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 254px;
 
     border-bottom: 4px solid rgba(255, 255, 255, 0.25);
 
@@ -31,9 +31,9 @@
 }
 
 .recipes-container {
+    flex: 1;
     width: auto;
-    position: absolute;
 
     padding: 0;
-    margin: 185px 0 0 254px;
+    margin: 0 0 0 254px;
 }

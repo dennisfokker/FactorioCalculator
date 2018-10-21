@@ -1,8 +1,9 @@
 <div class="header">
     <h1>Default options for machine usage</h1>
+    <div #collapser class="fa fa-chevron-circle-down collapser" [ngClass]="collapsed ? 'collapsed' : ''" (click)="collapsed = !collapsed"></div>
 </div>
 
-<div class="content">
+<div class="content collapsable" [ngClass]="collapsed ? 'collapsed' : ''">
     <div class="search-container">
         <div class="input-container">
             <i class="fa fa-search"></i>

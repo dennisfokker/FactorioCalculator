@@ -4,6 +4,14 @@
     flex-flow: column;
 
     margin: 0;
+
+    max-height: 180px;
+
+    transition: max-height 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.content.collapsed {
+    max-height: 0px;
 }
 
 .search-container {
@@ -20,15 +28,11 @@
     margin: 0;
 
     overflow-y: scroll;
-    /*overflow-y: scroll;*/
 }
 
 .list-container .list-content {
     column-count: 2;
-    /* column-width: 40%; */
     column-rule: 2px solid rgba(255, 255, 255, 0.25);
-    /* break-inside: avoid-column;
-    -webkit-column-break-inside: avoid; */
 
     overflow: hidden;
 }

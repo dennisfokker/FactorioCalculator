@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Machine } from '../_models/machine';
 
 @Component({
@@ -9,6 +9,7 @@ import { Machine } from '../_models/machine';
 export class DefaultUsageComponent implements OnInit
 {
     machines: Machine[];
+    collapsed = false;
 
     constructor() { }
 
