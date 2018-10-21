@@ -8,7 +8,6 @@ import { Machine } from '../_models/machine';
 })
 export class MachineOptionsComponent implements OnInit
 {
-    @Input() id: number;
     @Input() machine: Machine;
 
     machineDisplayed: boolean;

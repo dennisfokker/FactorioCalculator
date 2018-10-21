@@ -1,21 +1,17 @@
 <div class="header">
     <h1>Default options for machine usage</h1>
-    <div #collapser class="fa fa-chevron-circle-down collapser" [ngClass]="collapsed ? 'collapsed' : ''" (click)="collapsed = !collapsed"></div>
+    <div class="fa fa-chevron-circle-down collapser" [ngClass]="collapsed ? 'collapsed' : ''" (click)="collapsed = !collapsed"></div>
 </div>
 
 <div class="content collapsable" [ngClass]="collapsed ? 'collapsed' : ''">
     <div class="search-container">
         <div class="input-container">
             <i class="fa fa-search"></i>
-            <input type="search" placeholder="Search machines">
+            <input type="search" placeholder="Search machines and crafting categories">
         </div>
     </div>
 
     <div class="list-container">
-        <div class="list-content">
-            <div class="list-item" *ngFor="let m of machines; let i = index">
-                <app-machine-options [id]="i" [machine]="m"></app-machine-options>
-            </div>
-        </div>
+        <app-crafting-category-options *ngFor="let cc of craftingCategories" [craftingCategory]="cc"></app-crafting-category-options>
     </div>
 </div>

@@ -1,0 +1,32 @@
+.category-list-header {
+    width: auto;
+
+    margin: 0;
+    padding: 5px 5px 5px 10px;
+
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-top-right-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.category-list-container {
+    transition: height 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+    overflow: hidden;
+}
+
+.category-list {
+    column-count: 2;
+    column-rule: 2px solid rgba(255, 255, 255, 0.25);
+
+    overflow: hidden;
+
+    transform-origin: top;
+
+}
+
+.category-list .category-list-item {
+    display: inline-block;
+    width: 100%;
+}

@@ -27,21 +27,5 @@
 
     margin: 0;
 
-    overflow-y: scroll;
+    overflow-y: auto;
 }
-
-.list-container .list-content {
-    column-count: 2;
-    column-rule: 2px solid rgba(255, 255, 255, 0.25);
-
-    overflow: hidden;
-}
-
-.list-container .list-item {
-    display: inline-block;
-    width: 100%;
-}
-
-/* .list-container .list-item:nth-child(odd) {
-    border-right: 2px solid rgba(255, 255, 255, 0.25);
-} */

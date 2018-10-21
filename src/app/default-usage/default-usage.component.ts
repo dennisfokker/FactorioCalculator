@@ -1,5 +1,6 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { Machine } from '../_models/machine';
+import { Machine } from './../_models/machine';
+import { CraftingCategory } from './../_models/craftingCategory';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-default-usage',
@@ -8,12 +9,16 @@ import { Machine } from '../_models/machine';
 })
 export class DefaultUsageComponent implements OnInit
 {
-    machines: Machine[];
+    machines: Machine[] = [];
+    craftingCategories: CraftingCategory[] = [];
     collapsed = false;
 
     constructor() { }
 
     ngOnInit()
     {
+        this.craftingCategories.push(new CraftingCategory('base', [new Machine(), new Machine(), new Machine(), new Machine()]));
+        this.craftingCategories.push(new CraftingCategory('base with a very obvioxiously long name', [new Machine(), new Machine(), new Machine(), new Machine(), new Machine()]));
+        this.craftingCategories.push(new CraftingCategory('base 3', [new Machine(), new Machine(), new Machine(), new Machine(), new Machine()]));
     }
 }

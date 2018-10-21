@@ -8,6 +8,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { DefaultUsageComponent } from './default-usage/default-usage.component';
 import { SettingsAndItemsComponent } from './settings-and-items/settings-and-items.component';
 import { MachineOptionsComponent } from './machine-options/machine-options.component';
+import { CraftingCategoryOptionsComponent } from './crafting-category-options/crafting-category-options.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MachineOptionsComponent } from './machine-options/machine-options.compo
         RecipesComponent,
         DefaultUsageComponent,
         SettingsAndItemsComponent,
-        MachineOptionsComponent
+        MachineOptionsComponent,
+        CraftingCategoryOptionsComponent
     ],
     imports: [
         BrowserModule,
