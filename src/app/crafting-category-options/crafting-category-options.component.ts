@@ -9,6 +9,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, AfterCo
 export class CraftingCategoryOptionsComponent implements OnInit, AfterViewInit
 {
     @ViewChild('categoryListContainer') categoryListContainer: ElementRef;
+    @Input() id: number;
     @Input() craftingCategory: CraftingCategory;
     collapsed: boolean = false;
     listCalculatedHeight: string = null;

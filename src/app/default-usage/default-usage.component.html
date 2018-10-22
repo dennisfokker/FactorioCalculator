@@ -12,6 +12,6 @@
     </div>
 
     <div class="list-container">
-        <app-crafting-category-options *ngFor="let cc of craftingCategories" [craftingCategory]="cc"></app-crafting-category-options>
+        <app-crafting-category-options *ngFor="let cc of craftingCategories; let i = index" [id]="i" [craftingCategory]="cc"></app-crafting-category-options>
     </div>
 </div>

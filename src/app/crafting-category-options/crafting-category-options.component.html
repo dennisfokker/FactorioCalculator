@@ -5,8 +5,8 @@
 
 <div #categoryListContainer class="category-list-container collapsable" [style.height]="getCategoryListContainerHeight()">
     <div class="category-list collapsable">
-        <div class="category-list-item" *ngFor="let m of craftingCategory.machines">
-            <app-machine-options [machine]="m"></app-machine-options>
+        <div class="category-list-item" *ngFor="let m of craftingCategory.machines; let i = index">
+            <app-machine-options [id]="craftingCategory.category + id + i" [machine]="m"></app-machine-options>
         </div>
     </div>
 </div>

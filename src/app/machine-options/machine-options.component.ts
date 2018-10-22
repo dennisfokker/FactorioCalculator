@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Machine } from '../_models/machine';
+import { timeout } from 'q';
 
 @Component({
     selector: 'app-machine-options',
@@ -8,29 +9,12 @@ import { Machine } from '../_models/machine';
 })
 export class MachineOptionsComponent implements OnInit
 {
+    @Input() id: string;
     @Input() machine: Machine;
-
-    machineDisplayed: boolean;
 
     constructor() { }
 
     ngOnInit()
     {
-        this.machineDisplayed = this.machine.displayed;
-    }
-
-    onDisplayedChanged(checked: boolean)
-    {
-
-    }
-
-    onSpeedKeyUp(speed: number)
-    {
-
-    }
-
-    onProductionKeyUp(speed: number)
-    {
-
     }
 }

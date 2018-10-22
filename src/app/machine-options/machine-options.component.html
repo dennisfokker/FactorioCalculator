@@ -1,13 +1,13 @@
 <div class="checkbox">
-    <input type="checkbox" id="machine_option_displayed_{{machine.name}}" #displayed [checked]="machine.displayed" (change)="onDisplayedChanged(displayed.checked)" />
-    <label for="machine_option_displayed_{{machine.name}}"></label>
+    <input type="checkbox" id="machine_option_displayed_{{id}}" [(ngModel)]="machine.displayed" />
+    <label for="machine_option_displayed_{{id}}"></label>
 </div>
 <img src="assets/icons/{{machine.icon}}" />
 <span>{{machine.name}}</span>
 <div class="statistics">
     Speed
-    <input type="number" #speed value="{{machine.speed}}" min="0" max="10000" step="0.01" (keyup)="onSpeedKeyUp(speed.value)" />
+<input type="number" min="0" max="10000" step="0.01" [(ngModel)]="machine.speed" />
     % - Production
-    <input type="number" #production value="{{machine.production}}" min="0" max="10000" step="0.01" (keyup)="onProductionKeyUp(production.value)" />
+<input type="number" min="0" max="10000" step="0.01" [(ngModel)]="machine.production" />
     %
 </div>
