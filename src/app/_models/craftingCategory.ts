@@ -4,10 +4,10 @@ export class CraftingCategory
 {
     public machineDict: { [name: string]: Machine } = {};
 
-    constructor(public category: string = 'Unknown',
+    constructor(public name: string = 'Unknown',
         public machines: Machine[] = [])
     {
-        this.category = category;
+        this.name = name;
         this.machines = machines;
 
         this.machines.forEach((m) =>

@@ -8,6 +8,8 @@
     border-top-right-radius: 10px;
 
     background: rgba(255, 255, 255, 0.35);
+    
+    user-select: none;
 }
 
 .category-list-container {
@@ -19,6 +21,7 @@
 .category-list {
     column-count: 2;
     column-rule: 2px solid rgba(255, 255, 255, 0.25);
+    column-fill: auto;
 
     overflow: hidden;
 
