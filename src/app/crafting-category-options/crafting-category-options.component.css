@@ -24,9 +24,6 @@
     column-fill: auto;
 
     overflow: hidden;
-
-    transform-origin: top;
-
 }
 
 .category-list .category-list-item {

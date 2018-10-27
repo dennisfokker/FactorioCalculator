@@ -1,5 +1,5 @@
 import { CraftingCategory } from '../_models/craftingCategory';
-import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, AfterContentInit, AUTO_STYLE } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
     selector: 'app-crafting-category-options',

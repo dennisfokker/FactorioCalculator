@@ -1,0 +1,36 @@
+:host {
+    padding: 5px 5px 0 5px;
+
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    user-select: none;
+}
+
+* {
+    vertical-align: middle;
+}
+
+img {
+    height: 32px;
+    width: 32px;
+
+    margin: 5px;
+
+    filter: drop-shadow(0 0 5px white);
+}
+
+span {
+    flex: 1;
+}
+
+input[type="number"] {
+    width: 23px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}

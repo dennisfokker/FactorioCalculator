@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Machine } from '../_models/machine';
-import { timeout } from 'q';
 
 @Component({
     selector: 'app-machine-options',
