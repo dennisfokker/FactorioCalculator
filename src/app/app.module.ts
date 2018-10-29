@@ -12,6 +12,7 @@ import { MachineOptionsComponent } from './machine-options/machine-options.compo
 import { CraftingCategoryOptionsComponent } from './crafting-category-options/crafting-category-options.component';
 import { ModOptionsComponent } from './mod-options/mod-options.component';
 import { ItemOptionsComponent } from './item-options/item-options.component';
+import { RecipeOptionsComponent } from './recipe-options/recipe-options.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ItemOptionsComponent } from './item-options/item-options.component';
         MachineOptionsComponent,
         CraftingCategoryOptionsComponent,
         ModOptionsComponent,
-        ItemOptionsComponent
+        ItemOptionsComponent,
+        RecipeOptionsComponent
     ],
     imports: [
         BrowserModule,

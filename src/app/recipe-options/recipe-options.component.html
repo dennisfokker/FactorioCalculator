@@ -1,0 +1,21 @@
+<div class="recipe-block" (click)="recipeListContainerCollapseClick()">
+    <img src="assets/icons/{{ingredient.item.icon}}">
+    <span>{{ingredient.amount}}/s</span>
+
+    <div class="machines">
+        <img src="assets/icons/Stone_furnace.png">
+        ×50 or
+        <img src="assets/icons/Steel_furnace.png">
+        ×40 or
+        <img src="assets/icons/Electric_furnace.png">
+        ×25
+    </div>
+
+    <div class="header" *ngIf="ingredient.recipe.ingredients.length > 0">
+        <div class="fa fa-chevron-circle-down collapser" [ngClass]="collapsed ? 'collapsed' : ''"></div>
+    </div>
+    <div class="fa fa-cog settings"></div>
+</div>
+<div #ingedientListContainer class="ingredients-list" *ngIf="ingredient.recipe.ingredients.length > 0" [style.height]="getRecipeListContainerHeight()">
+    <app-recipe-options class="ingedients-list-item" [id]="ing.recipe.name + ing.recipe.name + id" [ingredient]="ing" *ngFor="let ing of ingredient.recipe.ingredients"></app-recipe-options>
+</div>

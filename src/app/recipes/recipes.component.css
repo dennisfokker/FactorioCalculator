@@ -7,6 +7,37 @@
     overflow-y: hidden;
 }
 
+.tree-container {
+    min-width: auto;
+    height: 100%;
+    flex: 1 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    border-left: 1px solid #1B1C1D;
+    border-right: 1px solid #1B1C1D;
+}
+
+.tree-header {
+    padding: 2px 5px;
+
+    border-bottom: 2px solid #1B1C1D;
+
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.tree-content {
+    flex: 1;
+
+    padding: 0px 10px 10px 10px;
+
+    word-wrap: break-word;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 *::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.4);
     box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);

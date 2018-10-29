@@ -1,0 +1,100 @@
+.recipe-block {
+    position: relative;
+    margin-top: 10px;
+    padding: 5px;
+
+    background: #c9dcec;
+
+    border: 2px solid #1B1C1D;
+    border-radius: 10px;
+}
+
+.recipe-block img {
+    height: 48px;
+    width: 48px;
+
+    margin: 5px;
+
+    float: left;
+
+    filter: drop-shadow(0 0 5px black);
+}
+
+.recipe-block span {
+    display: inline-block;
+
+    margin-bottom: 5px;
+}
+
+.recipe-block .machines {
+    margin-left: 58px;
+    margin-right: 25px;
+}
+
+.recipe-block .machines * {
+    vertical-align: middle;
+}
+
+.recipe-block .machines img {
+    height: 32px;
+    width: 32px;
+
+    margin: 0;
+
+    float: none;
+}
+
+.recipe-block .header {
+    margin: 0;
+    padding: 0;
+
+    overflow: visible;
+
+    border-bottom: none;
+}
+
+.recipe-block .header .collapser {
+    right: 0;
+    bottom: 0;
+
+    margin: 0;
+}
+
+.recipe-block .settings {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    overflow: visible;
+    
+    font-size: 1.3em;
+}
+
+.ingredients-list {
+    transition: height 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+    margin-left: 10px;
+
+    overflow-y: hidden;
+}
+
+.ingedients-list-item {
+    display: flex;
+
+    border-left: 4px solid #1B1C1D;
+}
+
+.ingedients-list-item::before {
+    content: "";
+    width: 15px;
+    height: 25px;
+    margin-left: -4px;
+
+    border-bottom: 4px solid #1B1C1D;
+    border-left: 4px solid #1B1C1D;
+    border-radius: 0 0 0 20px;
+}
+
+.ingedients-list-item:last-child {
+    border-left: 4px solid white;
+}
