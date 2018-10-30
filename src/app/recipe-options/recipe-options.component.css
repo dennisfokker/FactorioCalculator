@@ -2,6 +2,7 @@
     position: relative;
     margin-top: 10px;
     padding: 5px;
+    flex: 1;
 
     background: #c9dcec;
 
