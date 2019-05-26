@@ -1,0 +1,14 @@
+<div class="header">
+    <h1>File selector</h1>
+</div>
+<div>
+    <p>Please select the {{data.action}}.</p>
+    <input #pathInput (change)="onPathChange($event)" type="file" webkitdirectory directory>
+    <div *ngIf="path">
+        Current selection: {{path}}
+    </div>
+</div>
+<div>
+    <button (click)="onNoClick()">Cancel</button>
+    <button cdkFocusInitial>Ok</button>
+</div>

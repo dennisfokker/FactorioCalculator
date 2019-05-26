@@ -1,5 +1,8 @@
-import { Mod } from './../_models/mod';
 import { Component, OnInit } from '@angular/core';
+import { ModelService } from '../_services/model.service';
+import { ModalService } from './../_services/modal.service';
+import { FolderSelectorComponent } from './../_modals/folder-selector/folder-selector.component';
+import { Mod } from './../_models/mod';
 import { Item } from '../_models/item';
 
 @Component({
@@ -9,9 +12,14 @@ import { Item } from '../_models/item';
 })
 export class SettingsAndItemsComponent implements OnInit
 {
+    path: string;
     mods: Mod[] = [];
 
-    constructor() { }
+    constructor(public modelService: ModelService,
+                public modalService: ModalService)
+    {
+        modelService.modsChanged.subscribe((mods) => this.mods = mods);
+    }
 
     ngOnInit()
     {
@@ -23,6 +31,15 @@ export class SettingsAndItemsComponent implements OnInit
     setFactorioPath()
     {
         console.log('Set factorio path.');
+        /*const dialogRef = this.dialog.open(FolderSelectorComponent, {
+            width: '250px',
+            data: { action: 'Factorio install path', path: this.path }
+        });
+
+        dialogRef.afterClosed().subscribe(result =>
+        {
+            this.path = result;
+        });*/
     }
 
     setModPath()
@@ -43,5 +60,10 @@ export class SettingsAndItemsComponent implements OnInit
     exportSettings()
     {
         console.log('export settings.');
+    }
+
+    closeModal(id: string)
+    {
+        this.modalService.close(id);
     }
 }

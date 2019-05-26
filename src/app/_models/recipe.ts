@@ -1,7 +1,8 @@
 import { Ingredient } from './ingredient';
 import { Result } from './result';
+import { Indexable } from '../_interfaces/indexable';
 
-export class Recipe
+export class Recipe implements Indexable
 {
     constructor(public results: Result[],
         public name: string = 'Unknown',

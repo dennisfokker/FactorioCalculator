@@ -3,6 +3,7 @@ import { Recipe } from '../_models/recipe';
 import { Item } from '../_models/item';
 import { Result } from '../_models/result';
 import { Ingredient } from '../_models/ingredient';
+import { ModelService } from '../_services/model.service';
 
 @Component({
     selector: 'app-recipes',
@@ -14,7 +15,10 @@ export class RecipesComponent implements OnInit
     ingredients: Ingredient[] = [];
     sharedIngredients: Ingredient[] = [];
 
-    constructor() { }
+    constructor(public modelService: ModelService)
+    {
+        modelService.ingredientsChanged.subscribe((ingredients) => this.ingredients = ingredients);
+    }
 
     ngOnInit()
     {

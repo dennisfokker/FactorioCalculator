@@ -1,6 +1,7 @@
 import { Machine } from './machine';
+import { Indexable } from '../_interfaces/indexable';
 
-export class CraftingCategory
+export class CraftingCategory implements Indexable
 {
     public machineDict: { [name: string]: Machine } = {};
 

@@ -1,13 +1,15 @@
-export class Item
+import { Indexable } from '../_interfaces/indexable';
+
+export class Item implements Indexable
 {
     constructor(public name: string = 'Unknown',
-        public shared: boolean = false,
         public icon: string = '__Unknown__.png',
+        public shared: boolean = false,
         public amount: number = 0)
     {
         this.name = name;
-        this.shared = shared;
         this.icon = icon;
+        this.shared = shared;
         this.amount = amount;
     }
 }

@@ -1,3 +1,4 @@
+import { ModelService } from './../_services/model.service';
 import { Machine } from './../_models/machine';
 import { CraftingCategory } from './../_models/craftingCategory';
 import { Component, OnInit } from '@angular/core';
@@ -12,12 +13,15 @@ export class DefaultUsageComponent implements OnInit
     craftingCategories: CraftingCategory[] = [];
     collapsed = false;
 
-    constructor() { }
+    constructor(public modelService: ModelService)
+    {
+        modelService.craftingCategoriesChanged.subscribe((craftingCategories) => this.craftingCategories = craftingCategories);
+    }
 
     ngOnInit()
     {
-        let machine = new Machine();
-        let machine2 = new Machine();
+        const machine = new Machine();
+        const machine2 = new Machine();
         this.craftingCategories.push(new CraftingCategory('base', [machine, machine2, machine]));
         this.craftingCategories.push(new CraftingCategory('base', [machine2, machine]));
     }

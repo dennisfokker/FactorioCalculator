@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -13,6 +14,9 @@ import { CraftingCategoryOptionsComponent } from './crafting-category-options/cr
 import { ModOptionsComponent } from './mod-options/mod-options.component';
 import { ItemOptionsComponent } from './item-options/item-options.component';
 import { RecipeOptionsComponent } from './recipe-options/recipe-options.component';
+import { ModelService } from './_services/model.service';
+import { FolderSelectorComponent } from './_modals/folder-selector/folder-selector.component';
+import { ModalService } from './_services/modal.service';
 
 
 @NgModule({
@@ -25,14 +29,18 @@ import { RecipeOptionsComponent } from './recipe-options/recipe-options.componen
         CraftingCategoryOptionsComponent,
         ModOptionsComponent,
         ItemOptionsComponent,
-        RecipeOptionsComponent
+        RecipeOptionsComponent,
+        FolderSelectorComponent
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
-    providers: [],
+    entryComponents: [FolderSelectorComponent],
+    providers: [ModelService, ModalService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

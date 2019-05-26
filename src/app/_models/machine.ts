@@ -1,14 +1,16 @@
-export class Machine
+import { Indexable } from '../_interfaces/indexable';
+
+export class Machine implements Indexable
 {
     constructor(public name: string = 'Unknown',
-        public displayed: boolean = false,
         public icon: string = '__Unknown__.png',
-        public speed: number = 100,
-        public production: number = 100,
-        public energyConsumption: number = 0,
         public craftSpeed: number = 1,
+        public craftingCategories: number[] = [],
+        public energyConsumption: number = 0,
+        public speed: number = 0,
+        public production: number = 0,
         public pollution: number = 0,
-        public craftingCategories: number[] = [])
+        public displayed: boolean = false)
     {
         this.name = name;
         this.displayed = displayed;

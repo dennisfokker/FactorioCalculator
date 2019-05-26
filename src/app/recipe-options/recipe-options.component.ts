@@ -38,6 +38,9 @@ export class RecipeOptionsComponent implements OnInit, AfterViewInit
 
     recipeListContainerCollapseClick()
     {
+        if (this.ingredient.recipe.ingredients.length <= 0)
+            return;
+
         this.collapsed = !this.collapsed;
 
         if (this.listCalculatedHeight == null) {

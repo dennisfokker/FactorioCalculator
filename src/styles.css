@@ -178,6 +178,11 @@ body,
     flex-flow: column;
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
+
 h1 {
     margin: 0;
     padding: 0;
@@ -213,7 +218,7 @@ h1 {
     margin-right: 5px;
 
     font-size: 1.3em;
-    
+
     transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 

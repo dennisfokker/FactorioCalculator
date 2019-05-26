@@ -1,6 +1,7 @@
 import { Item } from './item';
+import { Indexable } from '../_interfaces/indexable';
 
-export class Mod
+export class Mod implements Indexable
 {
     constructor(public name: string = 'Unknown',
         public items: Item[] = [])
