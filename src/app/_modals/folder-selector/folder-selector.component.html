@@ -4,8 +4,8 @@
 <div>
     <p>Please select the {{data.action}}.</p>
     <input #pathInput (change)="onPathChange($event)" type="file" webkitdirectory directory>
-    <div *ngIf="path">
-        Current selection: {{path}}
+    <div *ngIf="data.path">
+        Current selection: {{data.path}}
     </div>
 </div>
 <div>

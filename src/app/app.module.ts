@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
+
 import { RecipesComponent } from './recipes/recipes.component';
 import { DefaultUsageComponent } from './default-usage/default-usage.component';
 import { SettingsAndItemsComponent } from './settings-and-items/settings-and-items.component';
@@ -34,7 +33,6 @@ import { ModalService } from './_services/modal.service';
     ],
     imports: [
         BrowserModule,
-        BrowserAnimationsModule,
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule
