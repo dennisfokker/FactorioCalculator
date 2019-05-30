@@ -16,6 +16,8 @@ import { RecipeOptionsComponent } from './recipe-options/recipe-options.componen
 import { ModelService } from './_services/model.service';
 import { FolderSelectorComponent } from './_modals/folder-selector/folder-selector.component';
 import { ModalService } from './_services/modal.service';
+import { ModalContainerComponent } from './_modals/modal-container/modal-container.component';
+import { ModalDirective } from './_directives/modal.directive';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { ModalService } from './_services/modal.service';
         ModOptionsComponent,
         ItemOptionsComponent,
         RecipeOptionsComponent,
-        FolderSelectorComponent
+        FolderSelectorComponent,
+        ModalContainerComponent,
+        ModalDirective
     ],
     imports: [
         BrowserModule,

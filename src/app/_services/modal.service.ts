@@ -1,29 +1,23 @@
-import { Injectable } from '@angular/core';
+import { ModalContainerComponent } from './../_modals/modal-container/modal-container.component';
+import { Injectable, Type } from '@angular/core';
 
 @Injectable()
 export class ModalService
 {
-    private modals: any[] = [];
+    private modalContainer: ModalContainerComponent;
 
-    add(modal: any)
+    public setModalContainer(modalContainer: ModalContainerComponent): void
     {
-        this.modals.push(modal);
+        this.modalContainer = modalContainer;
     }
 
-    remove(id: string)
+    public openModal(modal: Type<any>, data: any): void
     {
-        this.modals = this.modals.filter(x => x.id !== id);
+        this.modalContainer.open(modal, data);
     }
 
-    open(id: string)
+    public close(): void
     {
-        const modal: any = this.modals.filter(x => x.id === id)[0];
-        modal.open();
-    }
-
-    close(id: string)
-    {
-        const modal: any = this.modals.filter(x => x.id === id)[0];
-        modal.close();
+        this.modalContainer.close();
     }
 }

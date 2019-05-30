@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModelService } from '../_services/model.service';
 import { ModalService } from './../_services/modal.service';
-import { FolderSelectorComponent } from './../_modals/folder-selector/folder-selector.component';
 import { Mod } from './../_models/mod';
 import { Item } from '../_models/item';
+import { FolderSelectorComponent } from '../_modals/folder-selector/folder-selector.component';
 
 @Component({
     selector: 'app-settings-and-items',
@@ -30,6 +30,7 @@ export class SettingsAndItemsComponent implements OnInit
     setFactorioPath()
     {
         console.log('Set factorio path.');
+        this.modalService.openModal(FolderSelectorComponent, {action: 'Factorio path'});
         /*const dialogRef = this.dialog.open(FolderSelectorComponent, {
             width: '250px',
             data: { action: 'Factorio install path', path: this.path }
@@ -61,8 +62,8 @@ export class SettingsAndItemsComponent implements OnInit
         console.log('export settings.');
     }
 
-    closeModal(id: string)
+    closeModal()
     {
-        this.modalService.close(id);
+        this.modalService.close();
     }
 }
