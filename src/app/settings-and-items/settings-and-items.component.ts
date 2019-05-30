@@ -23,9 +23,8 @@ export class SettingsAndItemsComponent implements OnInit
 
     ngOnInit()
     {
-        this.mods.push(new Mod('base', [new Item('Very obnoxiously long name how this work lol will it?.'), new Item('Very obnoxiously long name how this work lol will it?.'), new Item(), new Item(), new Item()]));
-        this.mods.push(new Mod('not base', [new Item('Very obnoxiously long name how this work lol will it?.'), new Item(), new Item(), new Item(), new Item(), new Item('Very obnoxiously long name how this work lol will it?.')]));
-        this.mods.push(new Mod('also not base', [new Item(), new Item(), new Item(), new Item(), new Item(), new Item(), new Item(), new Item()]));
+        this.mods.push(new Mod('Base Factorio', [new Item('Iron plate', 'iron-plate.png'), new Item('Copper cable', 'copper-cable.png', true, 5)]));
+        this.mods.push(new Mod('Bob\'s Metals, Chemicals and Intermediates', [new Item('Aluminum plate')]));
     }
 
     setFactorioPath()

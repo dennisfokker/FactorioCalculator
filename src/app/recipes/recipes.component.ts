@@ -37,15 +37,21 @@ export class RecipesComponent implements OnInit
             ]);
         const recipe2 = new Recipe([result], undefined, undefined,
             [
-                new Ingredient(ingredientResult.item, new Recipe(
+                new Ingredient(new Item('Copper cable', 'copper-cable.png'), new Recipe(
                     [
                         ingredientResult, ingredientResult
-                    ], 'Iron plate', undefined,
+                    ], undefined, undefined,
                     [
-                        new Ingredient(ingredientResult.item, new Recipe(
+                        new Ingredient(new Item('Copper plate', 'copper-plate.png'), new Recipe(
                             [
                                 ingredientResult, ingredientResult
-                            ]))
+                            ], undefined, undefined,
+                            [
+                                new Ingredient(new Item('Copper ore', 'copper-ore.png'), new Recipe(
+                                    [
+                                        ingredientResult, ingredientResult
+                                    ]))
+                            ]), 5)
                     ]), 5)
             ]);
 

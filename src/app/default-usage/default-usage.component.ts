@@ -20,9 +20,11 @@ export class DefaultUsageComponent implements OnInit
 
     ngOnInit()
     {
-        const machine = new Machine();
-        const machine2 = new Machine();
-        this.craftingCategories.push(new CraftingCategory('base', [machine, machine2, machine]));
-        this.craftingCategories.push(new CraftingCategory('base', [machine2, machine]));
+        const machine1 = new Machine('Assembling machine 1', 'assembling-machine-1.png');
+        const machine2 = new Machine('Assembling machine 2', 'assembling-machine-2.png');
+        const electricmine = new Machine('Electric mining drill', 'electric-mining-drill.png');
+        const bobMachine = new Machine('Assembly machine 4', undefined);
+        this.craftingCategories.push(new CraftingCategory('Base Factorio', [machine1, machine2, electricmine]));
+        this.craftingCategories.push(new CraftingCategory('Bob\'s assembling machines', [bobMachine]));
     }
 }
