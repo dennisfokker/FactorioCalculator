@@ -74,18 +74,21 @@
 .ingredients-list {
     transition: height 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
+    position: relative;
     margin-left: 10px;
 
     overflow-y: hidden;
 }
 
-.ingedients-list-item {
+.ingredients-list-item {
     display: flex;
+    flex-direction: column;
 
     border-left: 4px solid #1B1C1D;
 }
 
-.ingedients-list-item::before {
+.ingredients-list-item::before {
+    position: absolute;
     content: "";
     width: 15px;
     height: 25px;
@@ -96,6 +99,15 @@
     border-radius: 0 0 0 20px;
 }
 
-.ingedients-list-item:last-child {
+.ingredients-list-item:last-child {
     border-left: 4px solid white;
+}
+
+.ingredients-list-item .recipe-block {
+    margin-left: 15px;
+}
+
+.ingredients-list-item .ingredients-list
+{
+    margin-left: 30px;
 }

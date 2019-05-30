@@ -23,11 +23,34 @@ export class RecipesComponent implements OnInit
     ngOnInit()
     {
         const result = new Result(new Item());
-        const ingredientResult = new Result(new Item());
-        const recipe = new Recipe([result], undefined, undefined, [new Ingredient(ingredientResult.item, new Recipe([ingredientResult, ingredientResult])), new Ingredient(ingredientResult.item, new Recipe([ingredientResult, ingredientResult]))]);
+        const ingredientResult = new Result(new Item('Iron plate', 'iron-plate.png'));
+        const recipe = new Recipe([result], undefined, undefined,
+            [
+                new Ingredient(ingredientResult.item, new Recipe(
+                    [
+                        ingredientResult, ingredientResult
+                    ])),
+                new Ingredient(ingredientResult.item, new Recipe(
+                    [
+                        ingredientResult, ingredientResult
+                    ]))
+            ]);
+        const recipe2 = new Recipe([result], undefined, undefined,
+            [
+                new Ingredient(ingredientResult.item, new Recipe(
+                    [
+                        ingredientResult, ingredientResult
+                    ], 'Iron plate', undefined,
+                    [
+                        new Ingredient(ingredientResult.item, new Recipe(
+                            [
+                                ingredientResult, ingredientResult
+                            ]))
+                    ]), 5)
+            ]);
 
         this.ingredients = [new Ingredient(result.item, recipe), new Ingredient(result.item, recipe)];
-        this.sharedIngredients = [new Ingredient(result.item, recipe), new Ingredient(result.item, recipe)];
+        this.sharedIngredients = [new Ingredient(result.item, recipe), new Ingredient(result.item, recipe2)];
     }
 
 }

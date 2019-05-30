@@ -17,5 +17,5 @@
     <div class="fa fa-cog settings"></div>
 </div>
 <div #ingedientListContainer class="ingredients-list" *ngIf="ingredient.recipe.ingredients.length > 0" [style.height]="getRecipeListContainerHeight()">
-    <app-recipe-options class="ingedients-list-item" [id]="ing.recipe.name + ing.recipe.name + id" [ingredient]="ing" *ngFor="let ing of ingredient.recipe.ingredients"></app-recipe-options>
+    <app-recipe-options class="ingredients-list-item" [id]="ing.recipe.name + ing.recipe.name + id" [ingredient]="ing" *ngFor="let ing of ingredient.recipe.ingredients"></app-recipe-options>
 </div>
