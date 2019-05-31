@@ -11,7 +11,7 @@ import { ModalResult } from './../../_models/modalResult';
   styleUrls: ['./modal-container.component.css']
 })
 export class ModalContainerComponent implements OnInit {
-    private componentRef: ComponentRef<ModalComponent>;
+    componentRef: ComponentRef<ModalComponent>;
     @ViewChild(ModalDirective, {}) modalContainer: ModalDirective;
 
     constructor(private resolver: ComponentFactoryResolver,
