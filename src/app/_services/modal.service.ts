@@ -1,5 +1,7 @@
 import { ModalContainerComponent } from './../_modals/modal-container/modal-container.component';
 import { Injectable, Type } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ModalResult } from '../_models/modalResult';
 
 @Injectable()
 export class ModalService
@@ -11,9 +13,9 @@ export class ModalService
         this.modalContainer = modalContainer;
     }
 
-    public openModal(modal: Type<any>, data: any): void
+    public openModal(modal: Type<any>, data: any): Observable<ModalResult>
     {
-        this.modalContainer.open(modal, data);
+        return this.modalContainer.open(modal, data);
     }
 
     public close(): void

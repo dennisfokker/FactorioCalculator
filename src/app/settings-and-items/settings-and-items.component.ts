@@ -30,16 +30,22 @@ export class SettingsAndItemsComponent implements OnInit
     setFactorioPath()
     {
         console.log('Set factorio path.');
-        this.modalService.openModal(FolderSelectorComponent, {action: 'Factorio path'});
-        /*const dialogRef = this.dialog.open(FolderSelectorComponent, {
-            width: '250px',
-            data: { action: 'Factorio install path', path: this.path }
-        });
-
-        dialogRef.afterClosed().subscribe(result =>
+        this.modalService.openModal(FolderSelectorComponent, {action: 'Factorio path'}).subscribe((result) =>
         {
-            this.path = result;
-        });*/
+            if (result.canceled)
+            {
+                return;
+            }
+
+            const reader = new FileReader();
+
+            reader.onload = function (e)
+            {
+                const text = reader.result;
+                console.log(text);
+            };
+            reader.readAsText(result.result.files[0]);
+        });
     }
 
     setModPath()

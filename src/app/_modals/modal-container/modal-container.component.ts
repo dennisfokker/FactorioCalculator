@@ -1,6 +1,9 @@
 import { ModalService } from './../../_services/modal.service';
-import { Component, OnInit, ViewChild, ComponentFactoryResolver, Type } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver, Type, ComponentRef } from '@angular/core';
 import { ModalDirective } from './../../_directives/modal.directive';
+import { ModalComponent } from './../../_interfaces/modalComponent';
+import { Observable } from 'rxjs';
+import { ModalResult } from './../../_models/modalResult';
 
 @Component({
   selector: 'app-modal-container',
@@ -8,7 +11,7 @@ import { ModalDirective } from './../../_directives/modal.directive';
   styleUrls: ['./modal-container.component.css']
 })
 export class ModalContainerComponent implements OnInit {
-    private componentRef: any;
+    private componentRef: ComponentRef<ModalComponent>;
     @ViewChild(ModalDirective, {}) modalContainer: ModalDirective;
 
     constructor(private resolver: ComponentFactoryResolver,
@@ -19,12 +22,13 @@ export class ModalContainerComponent implements OnInit {
         this.modalService.setModalContainer(this);
     }
 
-    public open(modal: Type<any>, data: any): void
+    public open(modal: Type<ModalComponent>, data: any): Observable<ModalResult>
     {
         this.modalContainer.viewContainerRef.clear();
         const factory = this.resolver.resolveComponentFactory(modal);
         this.componentRef = this.modalContainer.viewContainerRef.createComponent(factory);
         this.componentRef.instance.data = data;
+        return this.componentRef.instance.modalClosed;
     }
 
     public close(): void
