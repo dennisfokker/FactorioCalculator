@@ -14,7 +14,7 @@ import { ModOptionsComponent } from './mod-options/mod-options.component';
 import { ItemOptionsComponent } from './item-options/item-options.component';
 import { RecipeOptionsComponent } from './recipe-options/recipe-options.component';
 import { ModelService } from './_services/model.service';
-import { FolderSelectorComponent } from './_modals/folder-selector/folder-selector.component';
+import { FactorioPathSelectorComponent } from './_modals/factorio-path-selector/factorio-path-selector.component';
 import { ModalService } from './_services/modal.service';
 import { ModalContainerComponent } from './_modals/modal-container/modal-container.component';
 import { ModalDirective } from './_directives/modal.directive';
@@ -31,7 +31,7 @@ import { ModalDirective } from './_directives/modal.directive';
         ModOptionsComponent,
         ItemOptionsComponent,
         RecipeOptionsComponent,
-        FolderSelectorComponent,
+        FactorioPathSelectorComponent,
         ModalContainerComponent,
         ModalDirective
     ],
@@ -41,7 +41,7 @@ import { ModalDirective } from './_directives/modal.directive';
         FormsModule,
         ReactiveFormsModule
     ],
-    entryComponents: [FolderSelectorComponent],
+    entryComponents: [FactorioPathSelectorComponent],
     providers: [ModelService, ModalService],
     bootstrap: [AppComponent]
 })

@@ -3,7 +3,7 @@ import { ModelService } from '../_services/model.service';
 import { ModalService } from './../_services/modal.service';
 import { Mod } from './../_models/mod';
 import { Item } from '../_models/item';
-import { FolderSelectorComponent } from '../_modals/folder-selector/folder-selector.component';
+import { FactorioPathSelectorComponent } from '../_modals/factorio-path-selector/factorio-path-selector.component';
 
 @Component({
     selector: 'app-settings-and-items',
@@ -30,7 +30,7 @@ export class SettingsAndItemsComponent implements OnInit
     setFactorioPath()
     {
         console.log('Set factorio path.');
-        this.modalService.openModal(FolderSelectorComponent, {action: 'Factorio path'}).subscribe((result) =>
+        this.modalService.openModal(FactorioPathSelectorComponent, {}).subscribe((result) =>
         {
             if (result.canceled)
             {
@@ -44,7 +44,7 @@ export class SettingsAndItemsComponent implements OnInit
                 const text = reader.result;
                 console.log(text);
             };
-            reader.readAsText(result.result.files[0]);
+            reader.readAsText(result.result.iconFiles[0]);
         });
     }
 

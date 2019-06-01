@@ -1,0 +1,123 @@
+.header {
+    margin-bottom: 20px;
+
+    border: none;
+}
+
+input {
+    position: absolute;
+
+    width: 0px;
+    height: 0px;
+
+    visibility: hidden;
+    z-index: -1;
+}
+
+.button-group {
+    display: flex;
+    flex-flow: row;
+
+    margin-top: 5px;
+}
+
+.button-group .button:first-child {
+    margin-right: 6px;
+}
+
+label.input,
+.button {
+    flex: 1;
+
+    padding: 7px 10px;
+    margin-bottom: 10px;
+
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px #105a92;
+
+    color: white;
+
+    background: #1784d7;
+    text-align: center;
+
+    user-select: none;
+}
+
+label.input:hover,
+.button:hover {
+    background: #1576c0;
+}
+
+label.input:active,
+.button:active {
+    transform: translateY(2px);
+
+    box-shadow: 0 3px #105a92;
+
+    background: #1576c0;
+}
+
+.modal-controls {
+    margin-top: 15px;
+}
+
+.fa.info {
+    position: relative;
+}
+
+.fa.info::before {
+    margin-left: 5px;
+
+    color: #1784d7;
+    font-size: 38px;
+
+    user-select: none;
+}
+
+.fa.info .tooltip {
+    visibility: hidden;
+
+    position: absolute;
+    z-index: 100;
+
+    bottom: 125%;
+    left: 50%;
+
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.fa.info:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .tooltip-content {
+    position: relative;
+
+    left: -50%;
+
+    padding: 5px;
+
+    background-color: rgba(27, 28, 29, 0.8);
+    color: #fff;
+
+    white-space: nowrap;
+
+    border-radius: 6px;
+}
+
+.tooltip .tooltip-content::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    margin-left: -5px;
+    border-width: 5px;
+
+    border-style: solid;
+    border-color: rgba(27, 28, 29, 0.8) transparent transparent transparent;
+}

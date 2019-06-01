@@ -21,7 +21,7 @@
 
     z-index: 1000;
 
-    overflow: auto;
+    overflow: visible;
 
     padding: 7px;
 

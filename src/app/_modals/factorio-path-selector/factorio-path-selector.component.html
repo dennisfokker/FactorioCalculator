@@ -1,0 +1,36 @@
+<div class="header">
+    <h1>Please provide the Factorio base files</h1>
+</div>
+
+<div class="button-group">
+    <label class="input">
+        <input #pathInput (change)="onPrototypePathChange($event)" type="file" webkitdirectory directory>
+        <div class="fa fa-upload"></div> Choose prototype path...
+    </label>
+    <div class="fa fa-question-circle info">
+        <div class="tooltip">
+            <div class="tooltip-content">
+                Prototypes provide all item/machine information.<br>
+                Example path: C:\Program Files\Steam\steamApps\common\Factorio\data\base\prototypes
+            </div>
+        </div>
+    </div>
+</div>
+<div class="button-group">
+    <label class="input">
+        <input #pathInput (change)="onIconPathChange($event)" type="file" webkitdirectory directory>
+        <div class="fa fa-upload"></div> Choose icon path...
+    </label>
+    <div class="fa fa-question-circle info">
+        <div class="tooltip">
+            <div class="tooltip-content">
+                Icons are used to visualise items\machines.<br>
+                Example path: Example path: C:\Program Files\Steam\steamApps\common\Factorio\data\base\graphics\icons
+            </div>
+        </div>
+    </div>
+</div>
+<div class="button-group modal-controls">
+    <div class="button" (click)="onCancelClick()">Cancel</div>
+    <div class="button" (click)="onOKClick()">Ok</div>
+</div>
