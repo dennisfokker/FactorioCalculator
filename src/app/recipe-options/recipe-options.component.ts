@@ -1,5 +1,7 @@
+import { ModalService } from './../_services/modal.service';
 import { Component, OnInit, Input, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Ingredient } from '../_models/ingredient';
+import { NAComponent } from '../_modals/na/na.component';
 
 @Component({
     selector: 'app-recipe-options',
@@ -14,7 +16,7 @@ export class RecipeOptionsComponent implements OnInit, AfterViewInit
     collapsed: boolean = false;
     listCalculatedHeight: string = null;
 
-    constructor() { }
+    constructor(private modalService: ModalService) { }
 
     ngOnInit()
     {
@@ -46,5 +48,11 @@ export class RecipeOptionsComponent implements OnInit, AfterViewInit
         if (this.listCalculatedHeight == null) {
             this.listCalculatedHeight = this.ingedientListContainer.nativeElement.offsetHeight + 'px';
         }
+    }
+
+    settingsClick(event)
+    {
+        event.stopPropagation();
+        this.modalService.openModal(NAComponent, {});
     }
 }

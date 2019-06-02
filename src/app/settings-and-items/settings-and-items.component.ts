@@ -1,9 +1,11 @@
+import { ModPathSelectorComponent } from './../_modals/mod-path-selector/mod-path-selector.component';
 import { Component, OnInit } from '@angular/core';
 import { ModelService } from '../_services/model.service';
 import { ModalService } from './../_services/modal.service';
 import { Mod } from './../_models/mod';
 import { Item } from '../_models/item';
 import { FactorioPathSelectorComponent } from '../_modals/factorio-path-selector/factorio-path-selector.component';
+import { NAComponent } from '../_modals/na/na.component';
 
 @Component({
     selector: 'app-settings-and-items',
@@ -29,7 +31,6 @@ export class SettingsAndItemsComponent implements OnInit
 
     setFactorioPath()
     {
-        console.log('Set factorio path.');
         this.modalService.openModal(FactorioPathSelectorComponent, {}).subscribe((result) =>
         {
             if (result.canceled)
@@ -50,26 +51,21 @@ export class SettingsAndItemsComponent implements OnInit
 
     setModPath()
     {
-        console.log('Set mod path.');
+        this.modalService.openModal(ModPathSelectorComponent, {});
     }
 
     toggleMods()
     {
-        console.log('toggle mods.');
+        this.modalService.openModal(NAComponent, {});
     }
 
     importSettings()
     {
-        console.log('import settings.');
+        this.modalService.openModal(NAComponent, {});
     }
 
     exportSettings()
     {
-        console.log('export settings.');
-    }
-
-    closeModal()
-    {
-        this.modalService.close();
+        this.modalService.openModal(NAComponent, {});
     }
 }

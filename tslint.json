@@ -67,7 +67,7 @@
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
     "one-line": [
-      true,
+      false,
       "check-catch",
       "check-else",
       "check-whitespace"

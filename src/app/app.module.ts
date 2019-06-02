@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import { FactorioPathSelectorComponent } from './_modals/factorio-path-selector/
 import { ModalService } from './_services/modal.service';
 import { ModalContainerComponent } from './_modals/modal-container/modal-container.component';
 import { ModalDirective } from './_directives/modal.directive';
+import { ModPathSelectorComponent } from './_modals/mod-path-selector/mod-path-selector.component';
+import { NAComponent } from './_modals/na/na.component';
 
 
 @NgModule({
@@ -32,6 +35,8 @@ import { ModalDirective } from './_directives/modal.directive';
         ItemOptionsComponent,
         RecipeOptionsComponent,
         FactorioPathSelectorComponent,
+        ModPathSelectorComponent,
+        NAComponent,
         ModalContainerComponent,
         ModalDirective
     ],
@@ -39,9 +44,10 @@ import { ModalDirective } from './_directives/modal.directive';
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        DeviceDetectorModule.forRoot()
     ],
-    entryComponents: [FactorioPathSelectorComponent],
+    entryComponents: [FactorioPathSelectorComponent, ModPathSelectorComponent, NAComponent],
     providers: [ModelService, ModalService],
     bootstrap: [AppComponent]
 })

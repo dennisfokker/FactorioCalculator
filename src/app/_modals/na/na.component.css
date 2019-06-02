@@ -1,0 +1,50 @@
+.header {
+    margin-bottom: 20px;
+
+    border: none;
+}
+
+.button-group {
+    display: flex;
+    flex-flow: row;
+
+    margin-top: 5px;
+}
+
+.button-group .button:first-child {
+    margin-right: 6px;
+}
+
+.button {
+    flex: 1;
+
+    padding: 7px 10px;
+    margin-bottom: 10px;
+
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px #105a92;
+
+    color: white;
+
+    background: #1784d7;
+    text-align: center;
+
+    user-select: none;
+}
+
+.button:hover {
+    background: #1576c0;
+}
+
+.button:active {
+    transform: translateY(2px);
+
+    box-shadow: 0 3px #105a92;
+
+    background: #1576c0;
+}
+
+.modal-controls {
+    margin-top: 15px;
+}
