@@ -1,9 +1,10 @@
+import { ItemGroupOption } from './../_models/options/itemGroupOption';
+import { ItemGroup } from './../_models/factorio/ItemGroup';
+import { Item } from './../_models/factorio/item';
+import { ModelService } from './../_services/model.service';
 import { ModPathSelectorComponent } from './../_modals/mod-path-selector/mod-path-selector.component';
 import { Component, OnInit } from '@angular/core';
-import { ModelService } from '../_services/model.service';
 import { ModalService } from './../_services/modal.service';
-import { Mod } from './../_models/mod';
-import { Item } from '../_models/item';
 import { FactorioPathSelectorComponent } from '../_modals/factorio-path-selector/factorio-path-selector.component';
 import { NAComponent } from '../_modals/na/na.component';
 
@@ -15,18 +16,18 @@ import { NAComponent } from '../_modals/na/na.component';
 export class SettingsAndItemsComponent implements OnInit
 {
     path: string;
-    mods: Mod[] = [];
+    itemGroupOptions: ItemGroupOption[] = [];
 
     constructor(public modelService: ModelService,
                 public modalService: ModalService)
     {
-        modelService.modsChanged.subscribe((mods) => this.mods = mods);
+        modelService.itemGroupsChanged.subscribe((itemGroups) => this.itemGroupOptions = itemGroups.map((itemGroup) => itemGroup.toOption(modelService)));
     }
 
     ngOnInit()
     {
-        this.mods.push(new Mod('Base Factorio', [new Item('Iron plate', 'iron-plate.png'), new Item('Copper cable', 'copper-cable.png', true, 5)]));
-        this.mods.push(new Mod('Bob\'s Metals, Chemicals and Intermediates', [new Item('Aluminum plate')]));
+        this.itemGroupOptions.push(new ItemGroup('Intermediates', undefined, [new Item('Iron plate', 'iron-plate.png', 'Intermediates'), new Item('Copper cable', 'copper-cable.png', 'Intermediates')]).toOption(this.modelService));
+        this.itemGroupOptions.push(new ItemGroup('Bob\'s intermediates', undefined, [new Item('Aluminum plate', '__Unknown__.png', 'Bob\'s intermediates')]).toOption(this.modelService));
     }
 
     setFactorioPath()
@@ -39,13 +40,14 @@ export class SettingsAndItemsComponent implements OnInit
             }
 
             const reader = new FileReader();
-
-            reader.onload = function (e)
+            reader.onload = (e) =>
             {
-                const text = reader.result;
-                console.log(text);
+                if (typeof reader.result === 'string')
+                {
+                    this.modelService.updateRecipesJSON(JSON.parse(reader.result));
+                }
             };
-            reader.readAsText(result.result.iconFiles[0]);
+            reader.readAsText(result.result.recipesFile);
         });
     }
 

@@ -11,9 +11,9 @@ import { DefaultUsageComponent } from './default-usage/default-usage.component';
 import { SettingsAndItemsComponent } from './settings-and-items/settings-and-items.component';
 import { MachineOptionsComponent } from './machine-options/machine-options.component';
 import { CraftingCategoryOptionsComponent } from './crafting-category-options/crafting-category-options.component';
-import { ModOptionsComponent } from './mod-options/mod-options.component';
+import { ItemGroupOptionsComponent } from './item-group-options/item-group-options.component';
 import { ItemOptionsComponent } from './item-options/item-options.component';
-import { RecipeOptionsComponent } from './recipe-options/recipe-options.component';
+import { RecipeNodeComponent } from './recipe-node/recipe-node.component';
 import { ModelService } from './_services/model.service';
 import { FactorioPathSelectorComponent } from './_modals/factorio-path-selector/factorio-path-selector.component';
 import { ModalService } from './_services/modal.service';
@@ -31,9 +31,9 @@ import { NAComponent } from './_modals/na/na.component';
         SettingsAndItemsComponent,
         MachineOptionsComponent,
         CraftingCategoryOptionsComponent,
-        ModOptionsComponent,
+        ItemGroupOptionsComponent,
         ItemOptionsComponent,
-        RecipeOptionsComponent,
+        RecipeNodeComponent,
         FactorioPathSelectorComponent,
         ModPathSelectorComponent,
         NAComponent,

@@ -1,17 +1,23 @@
-.mod-list-header {
+.item-group-header {
     width: auto;
 
     margin: 0;
     padding: 5px 5px 5px 10px;
 
-    border: 2px solid rgba(255, 255, 255, 0.25);
+    border: 2px solid #909191;
     border-top-right-radius: 10px;
 
     background: rgba(255, 255, 255, 0.35);
 
     user-select: none;
+
+    transition: margin-bottom 0.05s linear 0.25s;
 }
 
-.mod-list-container {
+.item-group-header.collapsed {
+    margin-bottom: -2px;
+}
+
+.item-group-container {
     transition: height 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }

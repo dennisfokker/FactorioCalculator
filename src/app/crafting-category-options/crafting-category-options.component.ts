@@ -1,4 +1,4 @@
-import { CraftingCategory } from '../_models/craftingCategory';
+import { RecipeCategory } from '../_models/factorio/recipeCategory';
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
@@ -10,7 +10,7 @@ export class CraftingCategoryOptionsComponent implements OnInit, AfterViewInit
 {
     @ViewChild('categoryListContainer') categoryListContainer: ElementRef;
     @Input() id: number;
-    @Input() craftingCategory: CraftingCategory;
+    @Input() craftingCategory: RecipeCategory;
     collapsed: boolean = false;
     listCalculatedHeight: string = null;
 

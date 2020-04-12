@@ -1,11 +1,11 @@
-<div class="category-list-header header" (click)="categoryListContainerCollapseClick()">
+<div class="category-list-header header" [ngClass]="collapsed ? 'collapsed' : ''" (click)="categoryListContainerCollapseClick()">
     {{craftingCategory.name}}
     <div class="fa fa-chevron-circle-down collapser" [ngClass]="collapsed ? 'collapsed' : ''"></div>
 </div>
 
 <div #categoryListContainer class="category-list-container collapsable" [style.height]="getCategoryListContainerHeight()">
     <div class="category-list collapsable">
-        <div class="category-list-item" *ngFor="let m of craftingCategory.machines; let i = index">
+        <div class="category-list-item" *ngFor="let m of craftingCategory.craftingMachines; let i = index">
             <app-machine-options [id]="craftingCategory.name + id + i" [machine]="m"></app-machine-options>
         </div>
     </div>

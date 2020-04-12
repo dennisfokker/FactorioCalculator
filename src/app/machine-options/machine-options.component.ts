@@ -1,5 +1,6 @@
+import { MachineOption } from './../_models/options/machineOption';
 import { Component, OnInit, Input } from '@angular/core';
-import { Machine } from '../_models/machine';
+import { CraftingMachine } from '../_models/factorio/craftingMachine';
 
 @Component({
     selector: 'app-machine-options',
@@ -9,11 +10,13 @@ import { Machine } from '../_models/machine';
 export class MachineOptionsComponent implements OnInit
 {
     @Input() id: string;
-    @Input() machine: Machine;
+    @Input() machine: CraftingMachine;
+    machineOption: MachineOption;
 
     constructor() { }
 
     ngOnInit()
     {
+        this.machineOption = new MachineOption(this.machine);
     }
 }

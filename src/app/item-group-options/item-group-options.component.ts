@@ -1,16 +1,16 @@
+import { ItemGroupOption } from './../_models/options/itemGroupOption';
 import { Component, OnInit, ViewChild, Input, ElementRef, AfterViewInit } from '@angular/core';
-import { Mod } from '../_models/mod';
 
 @Component({
-    selector: 'app-mod-options',
-    templateUrl: './mod-options.component.html',
-    styleUrls: ['./mod-options.component.css']
+    selector: 'app-item-group-options',
+    templateUrl: './item-group-options.component.html',
+    styleUrls: ['./item-group-options.component.css']
 })
-export class ModOptionsComponent implements OnInit, AfterViewInit
+export class ItemGroupOptionsComponent implements OnInit, AfterViewInit
 {
-    @ViewChild('modListContainer') modListContainer: ElementRef;
+    @ViewChild('itemGroupContainer') itemGroupContainer: ElementRef;
     @Input() id: number;
-    @Input() mod: Mod;
+    @Input() itemGroupOption: ItemGroupOption;
     collapsed: boolean = false;
     listCalculatedHeight: string = null;
 
@@ -27,12 +27,12 @@ export class ModOptionsComponent implements OnInit, AfterViewInit
         {
             setTimeout(() =>
             {
-                this.modListContainer.nativeElement.style.height = this.modListContainer.nativeElement.scrollHeight + 5 + 'px';
+                this.itemGroupContainer.nativeElement.style.height = this.itemGroupContainer.nativeElement.scrollHeight + 5 + 'px';
             }, 0);
         }, 0);
     }
 
-    getModListContainerHeight(): string
+    getItemGroupContainerHeight(): string
     {
         if (this.listCalculatedHeight == null) {
             return 'auto';
@@ -41,12 +41,12 @@ export class ModOptionsComponent implements OnInit, AfterViewInit
         return this.collapsed ? '0px' : this.listCalculatedHeight;
     }
 
-    modListContainerCollapseClick()
+    itemGroupContainerCollapseClick()
     {
         this.collapsed = !this.collapsed;
 
         if (this.listCalculatedHeight == null) {
-            this.listCalculatedHeight = this.modListContainer.nativeElement.scrollHeight + 5 + 'px';
+            this.listCalculatedHeight = this.itemGroupContainer.nativeElement.scrollHeight + 5 + 'px';
         }
     }
 }

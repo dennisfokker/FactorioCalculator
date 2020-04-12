@@ -1,0 +1,12 @@
+<div class="item-group-header header" [ngClass]="collapsed ? 'collapsed' : ''" (click)="itemGroupContainerCollapseClick()">
+    {{itemGroupOption.itemGroup.name}}
+    <div class="fa fa-chevron-circle-down collapser" [ngClass]="collapsed ? 'collapsed' : ''"></div>
+</div>
+
+<div #itemGroupContainer class="item-group-container collapsable" [style.height]="getItemGroupContainerHeight()">
+    <div class="item-group collapsable">
+        <div class="item-group-item" *ngFor="let item of itemGroupOption.itemGroup.items; let i = index">
+            <app-item-options [id]="itemGroupOption.itemGroup.name + id + i" [item]="item"></app-item-options>
+        </div>
+    </div>
+</div>

@@ -1,25 +1,45 @@
-import { ModalService } from './../_services/modal.service';
+import { ModelService } from './../_services/model.service';
+import { Item } from './../_models/factorio/item';
+import { ModalService } from '../_services/modal.service';
 import { Component, OnInit, Input, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { Ingredient } from '../_models/ingredient';
+import { Ingredient } from '../_models/factorio/ingredient';
 import { NAComponent } from '../_modals/na/na.component';
+import { Recipe } from '../_models/factorio/recipe';
 
 @Component({
-    selector: 'app-recipe-options',
-    templateUrl: './recipe-options.component.html',
-    styleUrls: ['./recipe-options.component.css']
+    selector: 'app-recipe-node',
+    templateUrl: './recipe-node.component.html',
+    styleUrls: ['./recipe-node.component.css']
 })
-export class RecipeOptionsComponent implements OnInit, AfterViewInit
+export class RecipeNodeComponent implements OnInit, AfterViewInit
 {
     @ViewChild('ingedientListContainer') ingedientListContainer: ElementRef;
-    @Input() id: number;
     @Input() ingredient: Ingredient;
     collapsed: boolean = false;
     listCalculatedHeight: string = null;
+    ingredientItem: Item;
+    ingredientRecipe: Recipe;
 
-    constructor(private modalService: ModalService) { }
+    constructor(private modalService: ModalService,
+        private modelService: ModelService) { }
 
     ngOnInit()
     {
+        if (typeof this.ingredient.item === 'string')
+        {
+            this.ingredientItem = this.modelService.items[this.ingredient.item];
+        }
+        else
+        {
+            this.ingredientItem = this.ingredient.item;
+        }
+
+        if (typeof this.ingredient.recipe === 'string') {
+            this.ingredientRecipe = this.modelService.recipes[this.ingredient.recipe];
+        }
+        else {
+            this.ingredientRecipe = this.ingredient.recipe;
+        }
     }
 
     ngAfterViewInit(): void
@@ -40,7 +60,7 @@ export class RecipeOptionsComponent implements OnInit, AfterViewInit
 
     recipeListContainerCollapseClick()
     {
-        if (this.ingredient.recipe.ingredients.length <= 0)
+        if (this.ingredientRecipe.ingredients.length <= 0)
             return;
 
         this.collapsed = !this.collapsed;

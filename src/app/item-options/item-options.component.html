@@ -3,5 +3,5 @@
     <label for="item_option_displayed_{{id}}"></label>
 </div>
 <input type="number" min="0" max="10000" step="0.01" [(ngModel)]="item.amount" />
-<img src="assets/icons/{{item.icon}}" />
+<img src="assets/icons/{{item.icon}}" onerror="this.onerror=null; this.src='assets/icons/__Unknown__.png';" />
 <span>{{item.name}}</span>

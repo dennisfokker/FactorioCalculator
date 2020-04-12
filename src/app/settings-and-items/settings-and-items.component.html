@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div class="item-list-container">
-        <app-mod-options *ngFor="let m of mods; let i = index" [id]="i" [mod]="m"></app-mod-options>
+    <div class="item-group-list-container">
+        <app-item-group-options *ngFor="let igo of itemGroupOptions; let i = index" [id]="i" [itemGroupOption]="igo"></app-item-group-options>
     </div>
 </div>

@@ -5,16 +5,16 @@
         </div>
 
         <div class="tree-content">
-            <app-recipe-options *ngFor="let ing of sharedIngredients; let i = index" [id]="'shared' + ing.item.name + i" [ingredient]="ing"></app-recipe-options>
+            <app-recipe-node *ngFor="let ing of sharedIngredients; let i = index" [ingredient]="ing"></app-recipe-node>
         </div>
     </div>
     <div class="tree-container" *ngFor="let ing of ingredients; let i = index">
         <div class="tree-header">
-            {{ing.item.name}}
+            {{ing.item}}
         </div>
 
         <div class="tree-content">
-            <app-recipe-options [id]="'ingredient' + ing.item.name + i" [ingredient]="ing"></app-recipe-options>
+            <app-recipe-node [ingredient]="ing"></app-recipe-node>
         </div>
     </div>
 </div>

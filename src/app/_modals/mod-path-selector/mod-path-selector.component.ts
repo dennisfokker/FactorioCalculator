@@ -63,7 +63,7 @@ export class ModPathSelectorComponent implements OnInit, ModalComponent
 
     onCancelClick()
     {
-        this.modalClosedSource.next(new ModalResult());
+        this.modalClosedSource.next(new ModalResult(true));
         this.modalService.close();
     }
 }

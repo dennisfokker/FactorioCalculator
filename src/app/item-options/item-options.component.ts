@@ -1,4 +1,4 @@
-import { Item } from './../_models/item';
+import { Item } from '../_models/factorio/item';
 import { Component, OnInit, Input, AfterViewInit, ElementRef } from '@angular/core';
 
 @Component({
