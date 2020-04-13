@@ -5,7 +5,7 @@ export class Ingredient
 {
     constructor(public item: string|Item,
         public amount: number = 1,
-        public recipe: string | Recipe) { }
+        public recipe?: string | Recipe) { }
 
     public toString(): string
     {

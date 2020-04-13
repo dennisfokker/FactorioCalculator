@@ -23,37 +23,60 @@ export class RecipesComponent implements OnInit
         const ingredientResult = new Result(new Item('Iron plate', 'iron-plate.png', undefined));
         const recipe = new Recipe('Iron storage box', 1, undefined,
             [
-                new Ingredient(ingredientResult.item, 1, new Recipe('Iron plate', 1, undefined, [],
-                    [
-                        ingredientResult, ingredientResult
-                    ])),
-                new Ingredient(ingredientResult.item, 1, new Recipe('Iron plate', 1, undefined, [],
-                    [
-                        ingredientResult, ingredientResult
-                    ]))
-            ], [result]);
-        const recipe2 = new Recipe('Copper cable', 1, undefined,
-            [
-                new Ingredient(new Item('Copper cable', 'copper-cable.png', undefined), 5, new Recipe('Copper plate', 1, undefined,
-                    [
-                        new Ingredient(new Item('Copper plate', 'copper-plate.png', undefined), 2, new Recipe('Copper ore', 1, undefined,
-                            [
-                                new Ingredient(new Item('Copper ore', 'copper-ore.png', undefined), 5, new Recipe('Iron plate', 1, undefined, [],
-                                    [
-                                        ingredientResult, ingredientResult
-                                    ]))
-                            ],
-                            [
-                                ingredientResult, ingredientResult
-                            ]))
-                    ],
-                    [
-                        ingredientResult, ingredientResult
-                    ]))
+                new Ingredient(ingredientResult.item, 1,
+                    new Recipe('Iron plate', 1, undefined, [],
+                        [
+                           ingredientResult
+                        ])
+                    ),
+                new Ingredient(ingredientResult.item, 1,
+                    new Recipe('Iron plate', 1, undefined, [],
+                        [
+                            ingredientResult
+                        ])
+                    )
             ], [result]);
 
+        const result2 = new Result(new Item('Electronic circuit', 'electronic-circuit.png', undefined));
+        const recipe2 = new Recipe('Electronic circuit', 0.5, undefined,
+            [
+                new Ingredient(
+                    new Item('Iron plate', 'iron-plate.png', undefined), 1,
+                    new Recipe('Iron plate', 3.2, undefined,
+                        [
+                            new Ingredient(
+                                new Item('Iron ore', 'iron-ore.png', undefined), 1
+                            )
+                        ],
+                        [
+                            new Result('Iron plate', 'item', 1)
+                        ])
+                ),
+                new Ingredient(
+                    new Item('Copper cable', 'copper-cable.png', undefined), 3,
+                    new Recipe('Copper cable', 0.5, undefined,
+                        [
+                            new Ingredient(
+                                new Item('Copper plate', 'copper-plate.png', undefined), 2,
+                                new Recipe('Copper plate', 3.2, undefined,
+                                    [
+                                        new Ingredient(
+                                            new Item('Copper ore', 'copper-ore.png', undefined), 1
+                                        )
+                                    ],
+                                    [
+                                        new Result('Copper plate', 'item', 1)
+                                    ])
+                                )
+                        ],
+                        [
+                            new Result('Copper cable', 'item', 2)
+                        ])
+                    )
+            ], [result2]);
+
         this.ingredients = [new Ingredient(result.item, 1, recipe), new Ingredient(result.item, 1, recipe)];
-        this.sharedIngredients = [new Ingredient(result.item, 1, recipe), new Ingredient(result.item, 1, recipe2)];
+        this.sharedIngredients = [new Ingredient(result.item, 1, recipe), new Ingredient(result2.item, 2, recipe2)];
     }
 
 }

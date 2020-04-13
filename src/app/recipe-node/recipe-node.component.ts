@@ -1,7 +1,7 @@
 import { ModelService } from './../_services/model.service';
 import { Item } from './../_models/factorio/item';
 import { ModalService } from '../_services/modal.service';
-import { Component, OnInit, Input, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild, AfterViewInit, Host, Optional } from '@angular/core';
 import { Ingredient } from '../_models/factorio/ingredient';
 import { NAComponent } from '../_modals/na/na.component';
 import { Recipe } from '../_models/factorio/recipe';
@@ -15,6 +15,7 @@ export class RecipeNodeComponent implements OnInit, AfterViewInit
 {
     @ViewChild('ingedientListContainer') ingedientListContainer: ElementRef;
     @Input() ingredient: Ingredient;
+    @Input() parentNode: RecipeNodeComponent;
     collapsed: boolean = false;
     listCalculatedHeight: string = null;
     ingredientItem: Item;
@@ -44,9 +45,12 @@ export class RecipeNodeComponent implements OnInit, AfterViewInit
 
     ngAfterViewInit(): void
     {
-        if (this.ingedientListContainer) {
-            this.ingedientListContainer.nativeElement.style.height = this.ingedientListContainer.nativeElement.offsetHeight + 'px';
-        }
+        setTimeout(() =>
+        {
+            if (this.ingedientListContainer) {
+                this.listCalculatedHeight = this.ingedientListContainer.nativeElement.offsetHeight + 'px';
+            }
+        }, 0);
     }
 
     getRecipeListContainerHeight(): string
@@ -58,6 +62,20 @@ export class RecipeNodeComponent implements OnInit, AfterViewInit
         return this.collapsed ? '0px' : this.listCalculatedHeight;
     }
 
+    adjustCalculatedListHeight(offset: number): void
+    {
+        if (this.listCalculatedHeight != null)
+        {
+            let current: number = +this.listCalculatedHeight.substring(0, this.listCalculatedHeight.length - 2);
+            current += offset;
+            this.listCalculatedHeight = current + 'px';
+        }
+
+        if (this.parentNode !== undefined) {
+            this.parentNode.adjustCalculatedListHeight(offset);
+        }
+    }
+
     recipeListContainerCollapseClick()
     {
         if (this.ingredientRecipe.ingredients.length <= 0)
@@ -67,6 +85,11 @@ export class RecipeNodeComponent implements OnInit, AfterViewInit
 
         if (this.listCalculatedHeight == null) {
             this.listCalculatedHeight = this.ingedientListContainer.nativeElement.offsetHeight + 'px';
+        }
+
+        if (this.parentNode !== undefined) {
+            const offset: number = +this.listCalculatedHeight.substring(0, this.listCalculatedHeight.length - 2);
+            this.parentNode.adjustCalculatedListHeight(this.collapsed ? -offset : offset);
         }
     }
 
